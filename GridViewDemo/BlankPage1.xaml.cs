@@ -26,6 +26,7 @@ namespace GridViewDemo
         {
             this.InitializeComponent();
             this.Loaded += MainPage_Loaded;
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
       private  static BlankPage1 _blank;
       void MainPage_Loaded(object sender, RoutedEventArgs e)

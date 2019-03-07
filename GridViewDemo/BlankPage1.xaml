@@ -12,7 +12,7 @@
         <GridView x:Name="GridViewMain"
                   Margin="0,100,0,0"
                   Padding="100,0,0,10">
-            <GridView.Resources>
+            <!--<GridView.Resources>
                 <DataTemplate x:Key="DataTemplateGridViewMain">
                     <Grid Width="100"
                           Height="100"
@@ -24,9 +24,19 @@
                                    TextAlignment="Center" />
                     </Grid>
                 </DataTemplate>
-            </GridView.Resources>
+            </GridView.Resources>-->
             <GridView.ItemTemplate>
-                <StaticResource ResourceKey="DataTemplateGridViewMain" />
+                <DataTemplate>
+                    <Grid Width="100"
+                          Height="100"
+                          Background="#FF7C1A9B">
+                        <TextBlock Text="{Binding}"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Tempus Sans ITC"
+                                   TextAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
         <ProgressBar x:Name="ProgressBar"
