@@ -20,7 +20,7 @@ namespace GridViewDemo
         {
             get
             {
-                if (lastItem > 500)
+                if (lastItem > 1000)
                 {
                     return false;
                 }
