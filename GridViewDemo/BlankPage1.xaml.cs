@@ -29,9 +29,10 @@ namespace GridViewDemo
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
       private  static BlankPage1 _blank;
-      void MainPage_Loaded(object sender, RoutedEventArgs e)
+    void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            GridViewMain.ItemsSource = new ItemsToShow();
+            //var res = await GetWallpaper.GetWallpaperMethod();
+           GridViewMain.ItemsSource = new ItemsToShow();
             _blank = this;
         }
         public static BlankPage1 Blank { get { return _blank; } }

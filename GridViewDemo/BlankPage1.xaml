@@ -6,13 +6,28 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:data="using:GridViewDemo.Model"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <DataTemplate x:Key="PhotosTemplate" x:DataType="data:WallPaper">
+            <StackPanel>
+                <controls:ImageEx Name="ImageExControl" IsCacheEnabled="True"                                    
+                         PlaceholderSource="/Assets/Default.jpg"  
+                                          PlaceholderStretch="UniformToFill"
+                         
+                         Source="{x:Bind Source}" CornerRadius="20"/>
+                <TextBlock Text="{x:Bind Title}" TextWrapping="WrapWholeWords"
+                           Margin="4"
+                                   FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <GridView x:Name="GridViewMain"
+        <!--<GridView x:Name="GridViewMain"
                   Margin="0,100,0,0"
                   Padding="100,0,0,10">
-            <!--<GridView.Resources>
+            --><!--<GridView.Resources>
                 <DataTemplate x:Key="DataTemplateGridViewMain">
                     <Grid Width="100"
                           Height="100"
@@ -24,13 +39,18 @@
                                    TextAlignment="Center" />
                     </Grid>
                 </DataTemplate>
-            </GridView.Resources>-->
+            </GridView.Resources>--><!--
             <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Width="100"
-                          Height="100"
+                <DataTemplate x:DataType="data:WallPaper">
+                    <Grid Width="600"
+                          Height="auto"
                           Background="#FF7C1A9B">
-                        <TextBlock Text="{Binding}"
+                        <controls:ImageEx Name="ImageExControl" IsCacheEnabled="True"                                    
+                         PlaceholderSource="/Assets/Default.jpg"  
+                                          PlaceholderStretch="UniformToFill"
+                         
+                         Source="{x:Bind source}" CornerRadius="20"/>
+                        <TextBlock Text="{x:Bind title}"
                                    VerticalAlignment="Center"
                                    FontSize="20"
                                    FontFamily="Tempus Sans ITC"
@@ -38,7 +58,28 @@
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
-        </GridView>
+        </GridView>-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Gv.Margin" Value="24,40,24,40" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups >
+        <controls:AdaptiveGridView Name="GridViewMain"
+                                   Margin="24,80,24,40"
+                                   OneRowModeEnabled="False"
+                                   DesiredWidth="600"
+                                   SelectionMode="Single"
+                                   IsItemClickEnabled="True"
+                                   ItemTemplate="{StaticResource PhotosTemplate}">
+
+        </controls:AdaptiveGridView>
         <ProgressBar x:Name="ProgressBar"
                      Height="10"
                      Margin="0,5,0,0"

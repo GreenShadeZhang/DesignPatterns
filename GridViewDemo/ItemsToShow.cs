@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 
 namespace GridViewDemo
 {
-    public class ItemsToShow : ObservableCollection<string>, ISupportIncrementalLoading
+    public class ItemsToShow : ObservableCollection<Model.WallPaper>, ISupportIncrementalLoading
     {
         public int lastItem = 1;
 
@@ -20,7 +20,7 @@ namespace GridViewDemo
         {
             get
             {
-                if (lastItem > 1000)
+                if (lastItem > 100)
                 {
                     return false;
                 }
@@ -46,21 +46,25 @@ namespace GridViewDemo
                          progressBar.Visibility = Visibility.Visible;
                     });
 
-                List<string> items = new List<string>();
-                for (int i = 0; i < 100; i++)
-                {
-                    items.Add(String.Format("Item {0}", i.ToString()));
-                    lastItem++;
-                    //if (lastItem == 10000)
-                    //{
-                    //    break;
-                    //}
-                }
-
+                //List<string> items = new List<string>();
+                //for (int i = 0; i < 100; i++)
+                //{
+                //    items.Add(String.Format("Item {0}", i.ToString()));
+                //    lastItem++;
+                //    //if (lastItem == 10000)
+                //    //{
+                //    //    break;
+                //    //}
+                //}
+               // List<Model.WallPaper> wallPapers = new List<Model.WallPaper>();
+                var res = await GetWallpaper.GetWallpaperMethod();
+                lastItem += res.Count;
                 await coreDispatcher.RunAsync(CoreDispatcherPriority.Normal,
-                    () =>
+                  () =>
                     {
-                        foreach (string item in items)
+                     
+                        
+                        foreach (var item in res)
                         {
                             this.Add(item);
                         }
