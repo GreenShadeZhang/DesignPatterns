@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSingleton", "ConsoleSingleton\ConsoleSingleton.csproj", "{A8D13FE2-2D12-40A7-97FF-A84874B217E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPChangedProject", "IPChangedProject\IPChangedProject.csproj", "{DD77463D-EDF1-4165-B28F-4AC759FDE1D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A8D13FE2-2D12-40A7-97FF-A84874B217E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8D13FE2-2D12-40A7-97FF-A84874B217E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8D13FE2-2D12-40A7-97FF-A84874B217E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD77463D-EDF1-4165-B28F-4AC759FDE1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD77463D-EDF1-4165-B28F-4AC759FDE1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD77463D-EDF1-4165-B28F-4AC759FDE1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD77463D-EDF1-4165-B28F-4AC759FDE1D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

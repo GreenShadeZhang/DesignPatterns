@@ -1,0 +1,18 @@
+﻿<Window x:Class="IPChangedProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IPChangedProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel x:Name="Panel">
+            <TextBlock x:Name="Xing" Text="{Binding Xing,Mode=OneWay}"/>
+            <TextBlock x:Name="Ming" Text="{Binding Ming,Mode=OneWay}"/>
+            <Button Click="Button_Click" Width="200" Height="100"/>
+            <TextBox x:Name="XingTbx"/>
+            <TextBox x:Name="MingTbx"/>
+        </StackPanel>
+    </Grid>
+</Window>
